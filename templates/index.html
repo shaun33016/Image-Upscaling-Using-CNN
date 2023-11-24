@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block title %}Home{% endblock %}
+
+{% block nav %}
+  <li class="nav-item active">
+    <a class="nav-link" href="{{ url_for('index') }}">Home</a>
+  </li>
+{% endblock %}
+
+{% block body %}
+  <h1>Welcome to the Image Upscaler!</h1>
+  <p>This is the home page content.</p>
+{% endblock %}
