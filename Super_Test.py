@@ -27,6 +27,7 @@ def calculate_psnr(original_img, other_img):
 
 # Model Imports
 ## CNN Model
+### Upscales upto x3. Small input with size 256x256 recommended to reduce comutational workload.
 modl = tf.keras.models.load_model('./models/image_upscale_model')
 
 ## EDSRx4
