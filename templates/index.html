@@ -9,6 +9,14 @@
 {% endblock %}
 
 {% block body %}
+  <br>
   <h1>Welcome to the Image Upscaler!</h1>
-  <p>This is the home page content.</p>
+  <br>
+  <form action="{{ url_for('process_upload') }}" method="post" enctype="multipart/form-data">
+    <div class="mb-3">
+      <label for="formFile" class="form-label">Choose Image to Upscale:</label>
+      <input class="form-control" type="file" id="formFile" name="file">
+    </div>
+    <button type="submit" class="btn btn-primary">Upload and Process</button>
+  </form>
 {% endblock %}
