@@ -99,7 +99,7 @@ def model_upscaling(superres_model, img_path, max_input_size=(256, 256)):
 
 
 if __name__ == "__main__":
-    single_image_path = "./imgs/img2.png"
+    single_image_path = "./imgs/img1.jpg"
     
     # Upscale the single image
     edsr_upscaled = edsr_upscaling(sr, single_image_path, upscale_factor=3)
