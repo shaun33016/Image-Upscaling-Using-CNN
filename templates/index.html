@@ -27,11 +27,14 @@
       <div class="mt-5 text-center">
         <h2 class="mb-4">Original Image</h2>
         <img src="{{ original_image_url }}" alt="Original Image" class="img-fluid rounded mx-auto d-block">
+        <p class="text-muted">Resolution: {{ original_image.width }} x {{ original_image.height }}</p>
 
         <h2 class="mt-4">Processed Image</h2>
         <img src="{{ processed_image_url }}" alt="Upscaled Image" class="img-fluid rounded mx-auto d-block">
+        <p class="text-muted">Resolution: {{ processed_image.width }} x {{ processed_image.height }}</p>
       </div>
       {% endif %}
+
 
     </div>
   </div>

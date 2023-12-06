@@ -14,7 +14,7 @@ app = Flask(__name__)
 app.secret_key = 'your_secret_key'  # Replace with a secure secret key
 
 
-def model_upscaling(superres_model, imgs, max_input_size=(1200, 1200)):
+def model_upscaling(superres_model, imgs, max_input_size=(256, 256)):
     img = imgs
     if img.size[0] > max_input_size[0] or img.size[1] > max_input_size[1]:
         img.thumbnail(max_input_size)
@@ -90,14 +90,7 @@ def process_upload():
                 original_image_url = 'data:image/jpeg;base64,' + base64.b64encode(original_image_stream.getvalue()).decode()
                 processed_image_url = 'data:image/jpeg;base64,' + base64.b64encode(processed_image_stream.getvalue()).decode()
 
-                return render_template(
-                    'index.html',
-                    durl='#',
-                    original_image_url=original_image_url,
-                    processed_image_url=processed_image_url,
-                    original_image=original_image,  # Pass the actual images
-                    processed_image=processed_image
-                )
+                return render_template('index.html', durl='#', original_image_url=original_image_url, processed_image_url=processed_image_url)
             except Exception as e:
                 flash(f'Error processing the image: {str(e)}', 'danger')
                 return redirect(request.url)
@@ -107,7 +100,6 @@ def process_upload():
 
     # Handle GET request if needed
     return render_template('index.html', durl='#')
-
 
 if __name__ == '__main__':
     app.run(debug=True)
