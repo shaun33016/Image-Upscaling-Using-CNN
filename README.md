@@ -6,7 +6,7 @@ This project implements a simple web application for upscaling images using a Co
 
 Before running the application, ensure you have the following dependencies installed:
 
-- Python (>= 3.6)
+- Python (>= 3.9)
 - Flask
 - TensorFlow
 - OpenCV (cv2)
